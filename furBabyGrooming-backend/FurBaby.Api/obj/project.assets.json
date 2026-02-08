@@ -4560,11 +4560,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/josephcornell/furBabyGroomingStudioAppTracerDemo/furBabyGroomingStudioApp/furBabyGrooming-backend/FurBaby.Api/FurBaby.Api.csproj",
+      "projectUniqueName": "/Users/josephcornell/furBabyGroomingStudioApp/furBabyGrooming-backend/FurBaby.Api/FurBaby.Api.csproj",
       "projectName": "FurBaby.Api",
-      "projectPath": "/Users/josephcornell/furBabyGroomingStudioAppTracerDemo/furBabyGroomingStudioApp/furBabyGrooming-backend/FurBaby.Api/FurBaby.Api.csproj",
+      "projectPath": "/Users/josephcornell/furBabyGroomingStudioApp/furBabyGrooming-backend/FurBaby.Api/FurBaby.Api.csproj",
       "packagesPath": "/Users/josephcornell/.nuget/packages/",
-      "outputPath": "/Users/josephcornell/furBabyGroomingStudioAppTracerDemo/furBabyGroomingStudioApp/furBabyGrooming-backend/FurBaby.Api/obj/",
+      "outputPath": "/Users/josephcornell/furBabyGroomingStudioApp/furBabyGrooming-backend/FurBaby.Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/josephcornell/.nuget/NuGet/NuGet.Config"

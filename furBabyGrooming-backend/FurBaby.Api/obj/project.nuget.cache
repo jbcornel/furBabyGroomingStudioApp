@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yMkJCTqdOQU=",
+  "dgSpecHash": "N6suSeLf/FI=",
   "success": true,
-  "projectFilePath": "/Users/josephcornell/furBabyGroomingStudioAppTracerDemo/furBabyGroomingStudioApp/furBabyGrooming-backend/FurBaby.Api/FurBaby.Api.csproj",
+  "projectFilePath": "/Users/josephcornell/furBabyGroomingStudioApp/furBabyGrooming-backend/FurBaby.Api/FurBaby.Api.csproj",
   "expectedPackageFiles": [
     "/Users/josephcornell/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/josephcornell/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",

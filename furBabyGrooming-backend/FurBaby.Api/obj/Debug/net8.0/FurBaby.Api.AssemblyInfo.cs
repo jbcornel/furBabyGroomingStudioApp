@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FurBaby.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d26789f8910c18e613fc26eb001ee137ea337c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b75a52223160d816d20d22fc181d100c74c3663")]
 [assembly: System.Reflection.AssemblyProductAttribute("FurBaby.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FurBaby.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
