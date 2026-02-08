@@ -1,0 +1,67 @@
+<div style="max-width: 720px; margin: 24px auto; padding: 16px;">
+  <h2>API Test</h2>
+
+  <button (click)="ping()">Ping backend</button>
+  <div *ngIf="pingResult" style="margin-top: 8px;">
+    <pre>{{ pingResult }}</pre>
+  </div>
+
+  <hr style="margin: 16px 0;" />
+
+  <h3>Create Appointment</h3>
+
+  <div style="display: grid; gap: 10px;">
+    <label>
+      Owner name
+      <input [(ngModel)]="form.ownerName" />
+    </label>
+
+    <label>
+      Owner email
+      <input [(ngModel)]="form.ownerEmail" />
+    </label>
+
+    <label>
+      Owner phone (optional)
+      <input [(ngModel)]="form.ownerPhone" />
+    </label>
+
+    <label>
+      Pet name
+      <input [(ngModel)]="form.petName" />
+    </label>
+
+    <label>
+      Pet type
+      <select [(ngModel)]="form.petType">
+        <option value="Dog">Dog</option>
+        <option value="Cat">Cat</option>
+      </select>
+    </label>
+
+    <label>
+      Service
+      <input [(ngModel)]="form.service" />
+    </label>
+
+    <label>
+      Requested date/time (ISO)
+      <input [(ngModel)]="form.requestedDate" />
+    </label>
+
+    <label>
+      Notes (optional)
+      <textarea [(ngModel)]="form.notes" rows="3"></textarea>
+    </label>
+  </div>
+
+  <button style="margin-top: 12px;" (click)="submit()">Submit</button>
+
+  <div *ngIf="submitResult" style="margin-top: 8px;">
+    <pre>{{ submitResult }}</pre>
+  </div>
+
+  <div *ngIf="error" style="margin-top: 12px; color: #b00020;">
+    {{ error }}
+  </div>
+</div>
