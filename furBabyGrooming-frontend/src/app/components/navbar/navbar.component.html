@@ -1,0 +1,66 @@
+<nav class="fb-navbar">
+  <div class="fb-navbar__inner container-fluid px-3 px-lg-4">
+
+    <!-- Brand / Logo -->
+    <a class="fb-navbar__brand" routerLink="/" (click)="closeMenu()">
+      <span class="fb-navbar__paw">🐾</span>
+      <span class="fb-navbar__brand-text">
+        <span class="fb-navbar__brand-top">Fur Baby</span>
+        <span class="fb-navbar__brand-bottom">Grooming Studio</span>
+      </span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <ul class="fb-navbar__links" [class.fb-navbar__links--open]="menuOpen">
+      <li>
+        <a routerLink="/"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{exact:true}"
+           (click)="closeMenu()">Home</a>
+      </li>
+      <li>
+        <a routerLink="/about"
+           routerLinkActive="active"
+           (click)="closeMenu()">About</a>
+      </li>
+      <li>
+        <a routerLink="/reviews"
+           routerLinkActive="active"
+           (click)="closeMenu()">Reviews</a>
+      </li>
+      <li>
+        <a routerLink="/appointment"
+           routerLinkActive="active"
+           (click)="closeMenu()">Request Appointment</a>
+      </li>
+
+      <!-- Mobile-only "Contact Now" inside the drawer -->
+      <li class="fb-navbar__mobile-cta">
+        <button class="btn-fb-primary w-100" (click)="onContactNow()">
+          <i class="bi bi-telephone-fill"></i> Contact Now
+        </button>
+      </li>
+    </ul>
+
+    <!-- Desktop CTA + hamburger -->
+    <div class="fb-navbar__actions">
+      <button class="btn-fb-primary fb-navbar__cta-btn" (click)="onContactNow()">
+        <i class="bi bi-telephone-fill"></i>
+        <span>Contact Now</span>
+      </button>
+
+      <button class="fb-navbar__hamburger" (click)="toggleMenu()" aria-label="Toggle navigation">
+        <span [class.open]="menuOpen"></span>
+        <span [class.open]="menuOpen"></span>
+        <span [class.open]="menuOpen"></span>
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Backdrop overlay on mobile when menu is open -->
+<div class="fb-navbar__backdrop"
+     [class.active]="menuOpen"
+     (click)="closeMenu()">
+</div>

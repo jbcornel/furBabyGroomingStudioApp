@@ -1,0 +1,217 @@
+/* =============================================
+   Navbar Component
+   ============================================= */
+
+.fb-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 72px;
+  background-color: rgba(18, 18, 31, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--fb-border);
+}
+
+.fb-navbar__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+/* ---------- Brand ---------- */
+.fb-navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.fb-navbar__paw {
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.fb-navbar__brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.fb-navbar__brand-top {
+  font-family: var(--fb-font-heading);
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--fb-white);
+  letter-spacing: -0.01em;
+}
+
+.fb-navbar__brand-bottom {
+  font-family: var(--fb-font-heading);
+  font-weight: 500;
+  font-size: 0.72rem;
+  color: var(--fb-accent-light);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ---------- Nav Links ---------- */
+.fb-navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fb-navbar__links li a {
+  display: block;
+  padding: 0.45rem 0.9rem;
+  color: rgba(255,255,255,0.78);
+  font-family: var(--fb-font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--fb-radius-sm);
+  transition: var(--fb-transition);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.fb-navbar__links li a:hover,
+.fb-navbar__links li a.active {
+  color: var(--fb-white);
+  background-color: rgba(255,255,255,0.07);
+}
+
+.fb-navbar__links li a.active {
+  color: var(--fb-accent-light);
+}
+
+/* Mobile-only CTA inside drawer — hidden on desktop */
+.fb-navbar__mobile-cta {
+  display: none;
+}
+
+/* ---------- Right-side actions ---------- */
+.fb-navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.fb-navbar__cta-btn {
+  font-size: 0.88rem;
+  padding: 0.5rem 1.15rem;
+}
+
+/* ---------- Hamburger ---------- */
+.fb-navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.fb-navbar__hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--fb-white);
+  border-radius: 2px;
+  transition: var(--fb-transition);
+  transform-origin: center;
+}
+
+/* Hamburger → X animation */
+.fb-navbar__hamburger span:nth-child(1).open {
+  transform: translateY(9px) rotate(45deg);
+}
+.fb-navbar__hamburger span:nth-child(2).open {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.fb-navbar__hamburger span:nth-child(3).open {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ---------- Backdrop ---------- */
+.fb-navbar__backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.fb-navbar__backdrop.active {
+  opacity: 1;
+}
+
+/* ---------- Mobile Styles ---------- */
+@media (max-width: 991px) {
+  .fb-navbar__hamburger {
+    display: flex;
+  }
+
+  .fb-navbar__cta-btn {
+    display: none;
+  }
+
+  .fb-navbar__backdrop {
+    display: block;
+  }
+
+  .fb-navbar__links {
+    position: fixed;
+    top: 72px;
+    right: -100%;
+    bottom: 0;
+    width: min(320px, 85vw);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background-color: var(--fb-dark-2);
+    border-left: 1px solid var(--fb-border);
+    padding: 1.5rem 1.25rem;
+    z-index: 999;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .fb-navbar__links--open {
+    right: 0;
+  }
+
+  .fb-navbar__links li a {
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--fb-border);
+    border-radius: 0;
+  }
+
+  .fb-navbar__links li:last-of-type a {
+    border-bottom: none;
+  }
+
+  .fb-navbar__mobile-cta {
+    display: block;
+    margin-top: 1.25rem;
+  }
+}

@@ -1,0 +1,263 @@
+<!-- Page Header -->
+<section class="fb-appt-hero">
+  <div class="container">
+    <div class="fb-badge">Easy Online Booking</div>
+    <h1 class="fb-section-title">Request an Appointment</h1>
+    <p class="fb-appt-hero__sub">
+      Fill out the form below and we'll reach out to confirm your time slot. Prefer to call?
+      <a href="tel:7347314582">(734) 731-4582</a>
+    </p>
+  </div>
+</section>
+
+<hr class="fb-divider">
+
+<!-- Form + Info columns -->
+<section class="fb-section">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- Form column -->
+      <div class="col-12 col-lg-7">
+
+        <!-- SUCCESS STATE -->
+        @if (status === 'success') {
+          <div class="fb-appt__success">
+            <div class="fb-appt__success-icon">
+              <i class="bi bi-check-circle-fill"></i>
+            </div>
+            <h2 class="fb-appt__success-heading">Request Sent!</h2>
+            <p class="fb-appt__success-body">
+              Thank you! We've received your appointment request and will reach out shortly to confirm
+              your time. If you need to reach us sooner, call or text
+              <a href="tel:7347314582">(734) 731-4582</a>.
+            </p>
+            <button class="btn-fb-outline mt-3" (click)="resetForm()">
+              <i class="bi bi-arrow-counterclockwise"></i> Submit Another Request
+            </button>
+          </div>
+        }
+
+        <!-- FORM STATE -->
+        @if (status !== 'success') {
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate class="fb-appt-form">
+
+            <!-- Owner info -->
+            <div class="fb-appt-form__section">
+              <h3 class="fb-appt-form__section-title">
+                <i class="bi bi-person-fill"></i> Owner Information
+              </h3>
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label class="fb-label" for="ownerName">Full Name <span class="text-accent">*</span></label>
+                  <input
+                    id="ownerName"
+                    type="text"
+                    class="fb-input"
+                    [class.fb-input--error]="isInvalid('ownerName')"
+                    formControlName="ownerName"
+                    placeholder="Jane Smith"
+                    autocomplete="name">
+                  @if (isInvalid('ownerName')) {
+                    <p class="fb-error">Please enter your full name.</p>
+                  }
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="fb-label" for="ownerPhone">Phone Number <span class="text-accent">*</span></label>
+                  <input
+                    id="ownerPhone"
+                    type="tel"
+                    class="fb-input"
+                    [class.fb-input--error]="isInvalid('ownerPhone')"
+                    formControlName="ownerPhone"
+                    placeholder="(734) 555-0100"
+                    autocomplete="tel">
+                  @if (isInvalid('ownerPhone')) {
+                    <p class="fb-error">Please enter a valid 10-digit phone number.</p>
+                  }
+                </div>
+
+                <div class="col-12">
+                  <label class="fb-label" for="ownerEmail">Email Address <span class="text-accent">*</span></label>
+                  <input
+                    id="ownerEmail"
+                    type="email"
+                    class="fb-input"
+                    [class.fb-input--error]="isInvalid('ownerEmail')"
+                    formControlName="ownerEmail"
+                    placeholder="jane@example.com"
+                    autocomplete="email">
+                  @if (isInvalid('ownerEmail')) {
+                    <p class="fb-error">Please enter a valid email address.</p>
+                  }
+                </div>
+              </div>
+            </div>
+
+            <!-- Pet info -->
+            <div class="fb-appt-form__section">
+              <h3 class="fb-appt-form__section-title">
+                <i class="bi bi-heart-fill"></i> Pet Information
+              </h3>
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label class="fb-label" for="petName">Pet's Name <span class="text-accent">*</span></label>
+                  <input
+                    id="petName"
+                    type="text"
+                    class="fb-input"
+                    [class.fb-input--error]="isInvalid('petName')"
+                    formControlName="petName"
+                    placeholder="Buddy">
+                  @if (isInvalid('petName')) {
+                    <p class="fb-error">Please enter your pet's name.</p>
+                  }
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="fb-label" for="petBreed">Breed <span class="text-muted-fb">(optional)</span></label>
+                  <input
+                    id="petBreed"
+                    type="text"
+                    class="fb-input"
+                    formControlName="petBreed"
+                    placeholder="Golden Retriever, Shih Tzu...">
+                </div>
+              </div>
+            </div>
+
+            <!-- Appointment details -->
+            <div class="fb-appt-form__section">
+              <h3 class="fb-appt-form__section-title">
+                <i class="bi bi-calendar2-check"></i> Appointment Details
+              </h3>
+              <div class="row g-3">
+                <div class="col-12">
+                  <label class="fb-label" for="serviceType">Service <span class="text-accent">*</span></label>
+                  <select
+                    id="serviceType"
+                    class="fb-input fb-select"
+                    [class.fb-input--error]="isInvalid('serviceType')"
+                    formControlName="serviceType">
+                    <option value="" disabled selected>Select a service...</option>
+                    @for (svc of services; track svc) {
+                      <option [value]="svc">{{ svc }}</option>
+                    }
+                  </select>
+                  @if (isInvalid('serviceType')) {
+                    <p class="fb-error">Please select a service.</p>
+                  }
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="fb-label" for="preferredDate">Preferred Date <span class="text-accent">*</span></label>
+                  <input
+                    id="preferredDate"
+                    type="date"
+                    class="fb-input"
+                    [class.fb-input--error]="isInvalid('preferredDate')"
+                    formControlName="preferredDate"
+                    [min]="minDate">
+                  @if (isInvalid('preferredDate')) {
+                    <p class="fb-error">Please select a preferred date.</p>
+                  }
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="fb-label" for="preferredTime">Preferred Time <span class="text-accent">*</span></label>
+                  <select
+                    id="preferredTime"
+                    class="fb-input fb-select"
+                    [class.fb-input--error]="isInvalid('preferredTime')"
+                    formControlName="preferredTime">
+                    <option value="" disabled selected>Select a time...</option>
+                    @for (slot of timeSlots; track slot) {
+                      <option [value]="slot">{{ slot }}</option>
+                    }
+                  </select>
+                  @if (isInvalid('preferredTime')) {
+                    <p class="fb-error">Please select a preferred time.</p>
+                  }
+                </div>
+
+                <div class="col-12">
+                  <label class="fb-label" for="notes">Additional Notes <span class="text-muted-fb">(optional)</span></label>
+                  <textarea
+                    id="notes"
+                    class="fb-input fb-textarea"
+                    formControlName="notes"
+                    rows="4"
+                    placeholder="Allergies, anxiety, specific cut instructions, etc."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- Error Banner -->
+            @if (status === 'error') {
+              <div class="fb-appt__error-banner">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                {{ errorMessage }}
+              </div>
+            }
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              class="btn-fb-primary fb-appt-form__submit"
+              [disabled]="status === 'submitting'">
+              @if (status === 'submitting') {
+                <span class="fb-spinner"></span> Sending Request...
+              } @else {
+                <i class="bi bi-send-fill"></i> Send Appointment Request
+              }
+            </button>
+
+            <p class="fb-appt-form__disclaimer">
+              Submitting this form is a request, not a confirmed booking. We will contact you within 24 hours to confirm your appointment.
+            </p>
+
+          </form>
+        }
+
+      </div>
+
+      <!-- Info sidebar -->
+      <div class="col-12 col-lg-5">
+        <div class="fb-appt__sidebar">
+
+          <div class="fb-appt__sidebar-card">
+            <h3 class="fb-appt__sidebar-heading">
+              <i class="bi bi-geo-alt-fill text-accent"></i> Our Location
+            </h3>
+            <p class="fb-appt__sidebar-text">
+              15150 Grand Blvd Unit #1<br>Monroe, MI 48161
+            </p>
+          </div>
+
+          <div class="fb-appt__sidebar-card">
+            <h3 class="fb-appt__sidebar-heading">
+              <i class="bi bi-telephone-fill text-accent"></i> Call or Text Us
+            </h3>
+            <a href="tel:7347314582" class="fb-appt__sidebar-phone">(734) 731-4582</a>
+            <p class="fb-appt__sidebar-text mt-1">Available by phone during business hours.</p>
+          </div>
+
+          <div class="fb-appt__sidebar-card">
+            <h3 class="fb-appt__sidebar-heading">
+              <i class="bi bi-info-circle-fill text-accent"></i> Good to Know
+            </h3>
+            <ul class="fb-appt__sidebar-list">
+              <li>Most appointments take 2–3 hours</li>
+              <li>All breeds and sizes welcome</li>
+              <li>We'll confirm via phone or email</li>
+              <li>Please arrive on time for drop-off</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

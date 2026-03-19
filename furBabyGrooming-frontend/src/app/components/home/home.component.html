@@ -1,0 +1,260 @@
+<!-- ===================================================
+     HERO SECTION
+     =================================================== -->
+<section class="fb-hero">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5">
+
+      <!-- Left: Headline + CTAs -->
+      <div class="col-12 col-lg-7">
+        <div class="fb-badge">Monroe, MI · Professional Pet Grooming</div>
+        <h1 class="fb-hero__headline">
+          Your Pet Deserves to<br>
+          <span class="text-accent">Look &amp; Feel</span> Their Best
+        </h1>
+        <p class="fb-hero__lead">
+          Expert grooming for dogs of all breeds and sizes — from a relaxing bath to a full
+          show-ready groom. Serving Monroe, Michigan with love and care.
+        </p>
+        <div class="fb-hero__ctas">
+          <a routerLink="/appointment" class="btn-fb-primary">
+            <i class="bi bi-calendar2-check"></i> Request Appointment
+          </a>
+          <a href="tel:7347314582" class="btn-fb-outline">
+            <i class="bi bi-telephone"></i> (734) 731-4582
+          </a>
+        </div>
+        <p class="fb-hero__address">
+          <i class="bi bi-geo-alt-fill text-accent"></i>
+          15150 Grand Blvd Unit #1, Monroe, MI 48161
+        </p>
+      </div>
+
+      <!-- Right: Services at a glance card -->
+      <div class="col-12 col-lg-5">
+        <div class="fb-hero__card">
+          <div class="fb-hero__card-header">
+            <i class="bi bi-scissors"></i> Popular Services
+          </div>
+          <ul class="fb-hero__service-list">
+            <li><i class="bi bi-check-circle-fill text-accent"></i> Bath &amp; Brush Out</li>
+            <li><i class="bi bi-check-circle-fill text-accent"></i> Full Breed Groom</li>
+            <li><i class="bi bi-check-circle-fill text-accent"></i> Nail Trim &amp; File</li>
+            <li><i class="bi bi-check-circle-fill text-accent"></i> Ear Cleaning</li>
+            <li><i class="bi bi-check-circle-fill text-accent"></i> De-Shedding Treatment</li>
+            <li><i class="bi bi-check-circle-fill text-accent"></i> Puppy's First Groom</li>
+          </ul>
+          <a routerLink="/appointment" class="btn-fb-gold w-100 mt-3 justify-content-center">
+            Book Now <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="fb-divider">
+
+<!-- ===================================================
+     SERVICES GRID
+     =================================================== -->
+<section class="fb-section">
+  <div class="container">
+    <div class="fb-accent-line"></div>
+    <h2 class="fb-section-title">Our Grooming Services</h2>
+    <p class="fb-section-subtitle">Everything your furry family member needs, under one roof.</p>
+
+    <div class="row g-3 g-md-4">
+      @for (service of services; track service.title) {
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="fb-card">
+            <i class="bi {{ service.icon }} fb-card-icon"></i>
+            <h3 class="fb-service-title">{{ service.title }}</h3>
+            <p class="fb-service-desc">{{ service.desc }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="text-center mt-5">
+      <a routerLink="/appointment" class="btn-fb-primary">
+        <i class="bi bi-calendar2-check"></i> Schedule Your Appointment
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="fb-divider">
+
+<!-- ===================================================
+     HOW IT WORKS
+     =================================================== -->
+<section class="fb-section-alt">
+  <div class="container">
+    <div class="fb-accent-line"></div>
+    <h2 class="fb-section-title">How It Works</h2>
+    <p class="fb-section-subtitle">Getting your pup pampered is easy.</p>
+
+    <div class="row g-4">
+      @for (step of steps; track step.number) {
+        <div class="col-12 col-md-4">
+          <div class="fb-step">
+            <div class="fb-step__number">{{ step.number }}</div>
+            <i class="bi {{ step.icon }} fb-step__icon"></i>
+            <h3 class="fb-step__title">{{ step.title }}</h3>
+            <p class="fb-step__desc">{{ step.desc }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<hr class="fb-divider">
+
+<!-- ===================================================
+     LOCATION
+     =================================================== -->
+<section class="fb-section">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+
+      <div class="col-12 col-lg-5">
+        <div class="fb-accent-line"></div>
+        <h2 class="fb-section-title">Find Us in Monroe</h2>
+        <p class="fb-section-subtitle">Conveniently located in Monroe, MI — easy parking, easy drop-off.</p>
+        <ul class="fb-location-list">
+          <li>
+            <i class="bi bi-geo-alt-fill text-accent"></i>
+            <span>15150 Grand Blvd Unit #1<br>Monroe, MI 48161</span>
+          </li>
+          <li>
+            <i class="bi bi-telephone-fill text-accent"></i>
+            <a href="tel:7347314582">(734) 731-4582</a>
+          </li>
+        </ul>
+        <a routerLink="/appointment" class="btn-fb-primary mt-2">
+          <i class="bi bi-calendar2-check"></i> Book an Appointment
+        </a>
+      </div>
+
+      <div class="col-12 col-lg-7">
+        <div class="fb-map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0!2d-83.3957!3d41.9167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s15150%20Grand%20Blvd%20Unit%201%2C%20Monroe%2C%20MI%2048161!5e0!3m2!1sen!2sus!4v1"
+            width="100%"
+            height="320"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Fur Baby Grooming Studio location">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="fb-divider">
+
+<!-- ===================================================
+     FAQ
+     =================================================== -->
+<section class="fb-section-alt">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="fb-accent-line"></div>
+        <h2 class="fb-section-title">Frequently Asked Questions</h2>
+        <p class="fb-section-subtitle">Everything you need to know before your first visit.</p>
+
+        <div class="accordion fb-faq" id="faqAccordion">
+          @for (faq of faqs; track faq.id; let i = $index) {
+            <div class="accordion-item fb-faq__item">
+              <h3 class="accordion-header">
+                <button
+                  class="accordion-button fb-faq__btn"
+                  [class.collapsed]="i !== 0"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  [attr.data-bs-target]="'#' + faq.id"
+                  [attr.aria-expanded]="i === 0 ? 'true' : 'false'"
+                  [attr.aria-controls]="faq.id">
+                  {{ faq.q }}
+                </button>
+              </h3>
+              <div
+                [id]="faq.id"
+                class="accordion-collapse collapse"
+                [class.show]="i === 0"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body fb-faq__body">
+                  {{ faq.a }}
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     FOOTER
+     =================================================== -->
+<footer class="fb-footer">
+  <div class="container">
+    <div class="row g-4 g-lg-5">
+
+      <!-- Brand col -->
+      <div class="col-12 col-md-5">
+        <div class="fb-footer__brand">
+          <span class="fb-footer__paw">🐾</span>
+          <span class="fb-footer__brand-name">Fur Baby Grooming Studio</span>
+        </div>
+        <p class="fb-footer__tagline">Professional pet grooming with heart — Monroe, MI</p>
+        <ul class="fb-footer__contact-list">
+          <li><i class="bi bi-geo-alt-fill"></i> 15150 Grand Blvd Unit #1, Monroe, MI 48161</li>
+          <li>
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:7347314582">(734) 731-4582</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Pages col -->
+      <div class="col-6 col-md-3">
+        <h4 class="fb-footer__heading">Pages</h4>
+        <ul class="fb-footer__links">
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/about">About</a></li>
+          <li><a routerLink="/reviews">Reviews</a></li>
+          <li><a routerLink="/appointment">Request Appointment</a></li>
+        </ul>
+      </div>
+
+      <!-- Services col -->
+      <div class="col-6 col-md-4">
+        <h4 class="fb-footer__heading">Services</h4>
+        <ul class="fb-footer__links">
+          <li>Bath &amp; Brush</li>
+          <li>Full Groom</li>
+          <li>Nail Trim</li>
+          <li>Ear Cleaning</li>
+          <li>De-Shedding</li>
+          <li>Puppy's First Groom</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr class="fb-divider mt-4 mb-3">
+    <p class="fb-footer__copy">
+      &copy; {{ currentYear }} Fur Baby Grooming Studio · Monroe, MI · All rights reserved.
+    </p>
+  </div>
+</footer>

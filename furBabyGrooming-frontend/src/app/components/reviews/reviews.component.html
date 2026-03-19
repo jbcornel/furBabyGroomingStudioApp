@@ -1,0 +1,82 @@
+<!-- Page Header -->
+<section class="fb-reviews-hero">
+  <div class="container">
+    <div class="fb-badge">What Our Clients Say</div>
+    <h1 class="fb-section-title">Customer Reviews</h1>
+    <p class="fb-reviews-hero__sub">
+      Real feedback from real Monroe pet owners. We let our work speak for itself.
+    </p>
+
+    <!-- Rating Summary -->
+    <div class="fb-reviews__summary">
+      <div class="fb-reviews__avg-score">{{ averageRating.toFixed(1) }}</div>
+      <div class="fb-reviews__avg-detail">
+        <div class="fb-stars">★★★★★</div>
+        <p class="fb-reviews__avg-label">{{ reviews.length }} Reviews · Exceptional</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="fb-divider">
+
+<!-- Reviews Grid -->
+<section class="fb-section">
+  <div class="container">
+    <div class="row g-4">
+      @for (review of reviews; track review.name) {
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="fb-review-card">
+            <!-- Header -->
+            <div class="fb-review-card__header">
+              <div class="fb-review-card__avatar">{{ review.initials }}</div>
+              <div class="fb-review-card__meta">
+                <div class="fb-review-card__name">{{ review.name }}</div>
+                <div class="fb-review-card__pet">🐾 {{ review.pet }}</div>
+              </div>
+            </div>
+
+            <!-- Stars + Date -->
+            <div class="fb-review-card__stars-row">
+              <span class="fb-stars">{{ getStars(review.rating) }}</span>
+              <span class="fb-review-card__date">{{ review.date }}</span>
+            </div>
+
+            <!-- Review text -->
+            <p class="fb-review-card__text">{{ review.text }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<hr class="fb-divider">
+
+<!-- Leave a Review CTA -->
+<section class="fb-section-alt">
+  <div class="container">
+    <div class="fb-reviews__cta">
+      <div>
+        <div class="fb-accent-line"></div>
+        <h2 class="fb-section-title">Had a Great Experience?</h2>
+        <p class="fb-reviews__cta-sub">
+          We'd love to hear from you! Leaving a review helps other Monroe pet owners
+          find a groomer they can trust.
+        </p>
+      </div>
+      <div class="fb-reviews__cta-actions">
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Fur+Baby+Grooming+Studio+Monroe+MI"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-fb-primary">
+          <i class="bi bi-google"></i> Leave a Google Review
+        </a>
+        <a routerLink="/appointment" class="btn-fb-outline">
+          <i class="bi bi-calendar2-check"></i> Book an Appointment
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

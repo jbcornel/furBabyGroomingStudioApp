@@ -1,0 +1,106 @@
+<!-- Page Header -->
+<section class="fb-about-hero">
+  <div class="container">
+    <div class="fb-badge">Our Story</div>
+    <h1 class="fb-section-title">About Fur Baby Grooming Studio</h1>
+    <p class="fb-about-hero__sub">
+      A Monroe, MI grooming studio built on a simple belief: every pet deserves to be treated with patience, skill, and love.
+    </p>
+  </div>
+</section>
+
+<hr class="fb-divider">
+
+<!-- Story Section -->
+<section class="fb-section">
+  <div class="container">
+    <div class="row align-items-center g-4 g-lg-5">
+
+      <div class="col-12 col-lg-6">
+        <div class="fb-accent-line"></div>
+        <h2 class="fb-section-title">Why We Do What We Do</h2>
+        <p class="fb-about__body">
+          Fur Baby Grooming Studio was born out of a lifelong passion for animals and a desire to provide Monroe-area pet owners
+          with a grooming experience they can genuinely trust. We know how stressful grooming can be — for both owners and pets —
+          so we've built our entire approach around reducing anxiety and making every visit as positive as possible.
+        </p>
+        <p class="fb-about__body mt-3">
+          Whether your dog is a first-time grooming client or a seasoned pro, we treat them with the same gentle care and professional
+          attention. We take pride in breed-specific styling, thorough sanitation, and honest communication with every single client.
+        </p>
+        <div class="fb-about__stats">
+          <div class="fb-about__stat">
+            <span class="fb-about__stat-num">100%</span>
+            <span class="fb-about__stat-label">Satisfaction Focus</span>
+          </div>
+          <div class="fb-about__stat">
+            <span class="fb-about__stat-num">All</span>
+            <span class="fb-about__stat-label">Breeds Welcome</span>
+          </div>
+          <div class="fb-about__stat">
+            <span class="fb-about__stat-num">Monroe</span>
+            <span class="fb-about__stat-label">MI Based &amp; Proud</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6">
+        <div class="fb-about__image-block">
+          <div class="fb-about__image-inner">
+            <span class="fb-about__paw-bg">🐾</span>
+            <div class="fb-about__image-content">
+              <i class="bi bi-scissors fb-about__scissors"></i>
+              <p class="fb-about__image-caption">Professional grooming with heart</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="fb-divider">
+
+<!-- Values Grid -->
+<section class="fb-section-alt">
+  <div class="container">
+    <div class="fb-accent-line"></div>
+    <h2 class="fb-section-title">What We Stand For</h2>
+    <p class="fb-section-subtitle">The principles that guide every groom.</p>
+
+    <div class="row g-4">
+      @for (val of values; track val.title) {
+        <div class="col-12 col-md-6">
+          <div class="fb-card fb-about__value-card">
+            <i class="bi {{ val.icon }} fb-about__value-icon"></i>
+            <h3 class="fb-about__value-title">{{ val.title }}</h3>
+            <p class="fb-about__value-desc">{{ val.desc }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<hr class="fb-divider">
+
+<!-- CTA Strip -->
+<section class="fb-section">
+  <div class="container">
+    <div class="fb-about__cta-strip">
+      <div>
+        <h2 class="fb-about__cta-heading">Ready to Book Your Pup's Next Groom?</h2>
+        <p class="fb-about__cta-sub">Use our online form or give us a call — we'd love to meet your furry family member.</p>
+      </div>
+      <div class="fb-about__cta-btns">
+        <a routerLink="/appointment" class="btn-fb-primary">
+          <i class="bi bi-calendar2-check"></i> Request Appointment
+        </a>
+        <a href="tel:7347314582" class="btn-fb-outline">
+          <i class="bi bi-telephone"></i> (734) 731-4582
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

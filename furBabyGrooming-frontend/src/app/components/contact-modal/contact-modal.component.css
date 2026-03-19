@@ -1,0 +1,207 @@
+/* =============================================
+   Contact Modal Component
+   ============================================= */
+
+/* ---------- Backdrop ---------- */
+.fb-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: fb-fade-in 0.2s ease;
+}
+
+/* ---------- Modal Panel ---------- */
+.fb-modal {
+  position: fixed;
+  z-index: 1101;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(480px, calc(100vw - 2rem));
+  background-color: var(--fb-dark-2);
+  border: 1px solid var(--fb-border);
+  border-radius: var(--fb-radius-lg);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+  overflow: hidden;
+  animation: fb-slide-up 0.25s ease;
+}
+
+/* ---------- Header ---------- */
+.fb-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--fb-dark-3);
+  border-bottom: 1px solid var(--fb-border);
+}
+
+.fb-modal__header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fb-modal__paw {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.fb-modal__title {
+  font-family: var(--fb-font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--fb-white);
+}
+
+.fb-modal__close {
+  background: none;
+  border: none;
+  color: var(--fb-muted);
+  font-size: 1.1rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--fb-radius-sm);
+  cursor: pointer;
+  transition: var(--fb-transition);
+}
+
+.fb-modal__close:hover {
+  background-color: rgba(255,255,255,0.08);
+  color: var(--fb-white);
+}
+
+/* ---------- Body ---------- */
+.fb-modal__body {
+  padding: 1.75rem 1.5rem;
+}
+
+.fb-modal__biz-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+
+.fb-modal__tagline {
+  color: var(--fb-muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ---------- Contact List ---------- */
+.fb-modal__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.fb-modal__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  background-color: var(--fb-dark-3);
+  border: 1px solid var(--fb-border);
+  border-radius: var(--fb-radius-md);
+  text-decoration: none;
+  color: var(--fb-white);
+  transition: var(--fb-transition);
+}
+
+.fb-modal__contact-item:hover {
+  border-color: rgba(201,121,106,0.5);
+  background-color: rgba(201,121,106,0.06);
+  color: var(--fb-white);
+  transform: translateX(3px);
+}
+
+.fb-modal__contact-item--primary {
+  border-color: rgba(201,121,106,0.3);
+}
+
+.fb-modal__contact-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(201,121,106,0.15);
+  color: var(--fb-accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.fb-modal__contact-icon--gold {
+  background-color: rgba(212,168,83,0.15);
+  color: var(--fb-gold);
+}
+
+.fb-modal__contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+}
+
+.fb-modal__contact-label {
+  font-family: var(--fb-font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--fb-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fb-modal__contact-value {
+  font-family: var(--fb-font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--fb-white);
+  line-height: 1.4;
+}
+
+.fb-modal__contact-arrow {
+  font-size: 1.4rem;
+  color: var(--fb-muted);
+  transition: var(--fb-transition);
+  flex-shrink: 0;
+}
+
+.fb-modal__contact-item:hover .fb-modal__contact-arrow {
+  color: var(--fb-accent-light);
+  transform: translateX(2px);
+}
+
+/* ---------- Book CTA ---------- */
+.fb-modal__book-btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fb-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fb-slide-up {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 20px));
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}

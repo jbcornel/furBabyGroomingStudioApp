@@ -1,0 +1,80 @@
+@if (isOpen) {
+  <!-- Backdrop -->
+  <div class="fb-modal-backdrop" (click)="close()"></div>
+
+  <!-- Modal Panel -->
+  <div class="fb-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
+    <!-- Header -->
+    <div class="fb-modal__header">
+      <div class="fb-modal__header-brand">
+        <span class="fb-modal__paw">🐾</span>
+        <span class="fb-modal__title" id="modal-title">Contact Us</span>
+      </div>
+      <button class="fb-modal__close" (click)="close()" aria-label="Close contact modal">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+
+    <!-- Body -->
+    <div class="fb-modal__body">
+
+      <!-- Business Name -->
+      <h2 class="fb-modal__biz-name">Fur Baby Grooming Studio</h2>
+      <p class="fb-modal__tagline">Professional Pet Grooming · Monroe, MI</p>
+
+      <hr class="fb-divider my-3">
+
+      <!-- Contact Options -->
+      <div class="fb-modal__contact-list">
+
+        <a href="tel:7347314582" class="fb-modal__contact-item fb-modal__contact-item--primary">
+          <div class="fb-modal__contact-icon">
+            <i class="bi bi-telephone-fill"></i>
+          </div>
+          <div class="fb-modal__contact-detail">
+            <span class="fb-modal__contact-label">Call Us</span>
+            <span class="fb-modal__contact-value">(734) 731-4582</span>
+          </div>
+          <i class="bi bi-arrow-right-short fb-modal__contact-arrow"></i>
+        </a>
+
+        <a href="sms:7347314582" class="fb-modal__contact-item">
+          <div class="fb-modal__contact-icon">
+            <i class="bi bi-chat-dots-fill"></i>
+          </div>
+          <div class="fb-modal__contact-detail">
+            <span class="fb-modal__contact-label">Text Us</span>
+            <span class="fb-modal__contact-value">(734) 731-4582</span>
+          </div>
+          <i class="bi bi-arrow-right-short fb-modal__contact-arrow"></i>
+        </a>
+
+        <a
+          href="https://www.google.com/maps/dir/?api=1&destination=15150+Grand+Blvd+Unit+1+Monroe+MI+48161"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="fb-modal__contact-item">
+          <div class="fb-modal__contact-icon fb-modal__contact-icon--gold">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+          <div class="fb-modal__contact-detail">
+            <span class="fb-modal__contact-label">Our Location</span>
+            <span class="fb-modal__contact-value">15150 Grand Blvd Unit #1<br>Monroe, MI 48161</span>
+          </div>
+          <i class="bi bi-arrow-right-short fb-modal__contact-arrow"></i>
+        </a>
+
+      </div>
+
+      <hr class="fb-divider my-3">
+
+      <!-- Book CTA -->
+      <a routerLink="/appointment" (click)="close()" class="btn-fb-primary fb-modal__book-btn">
+        <i class="bi bi-calendar2-check"></i> Request an Appointment Online
+      </a>
+
+    </div>
+
+  </div>
+}

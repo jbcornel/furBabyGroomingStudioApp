@@ -1,1 +1,257 @@
-/* You can add global styles to this file, and also import other style files */
+/* ============================================================
+   FUR BABY GROOMING STUDIO — Global Styles
+   ============================================================ */
+
+/* ---------- Design Tokens ---------- */
+:root {
+  --fb-dark:        #12121f;
+  --fb-dark-2:      #1c1c2e;
+  --fb-dark-3:      #252540;
+  --fb-accent:      #c9796a;       /* warm rose/terracotta */
+  --fb-accent-light:#e09484;
+  --fb-accent-dark: #a85f52;
+  --fb-gold:        #d4a853;       /* secondary warm gold */
+  --fb-white:       #ffffff;
+  --fb-off-white:   #f8f5f2;
+  --fb-muted:       #9a97a8;
+  --fb-border:      rgba(255,255,255,0.08);
+
+  --fb-font-heading: 'Poppins', sans-serif;
+  --fb-font-body:    'Inter', sans-serif;
+
+  --fb-radius-sm:   6px;
+  --fb-radius-md:   12px;
+  --fb-radius-lg:   20px;
+
+  --fb-shadow-card: 0 4px 24px rgba(0,0,0,0.35);
+  --fb-shadow-btn:  0 2px 12px rgba(201,121,106,0.45);
+
+  --fb-transition:  all 0.25s ease;
+}
+
+/* ---------- Base Reset ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fb-font-body);
+  background-color: var(--fb-dark);
+  color: var(--fb-white);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fb-font-heading);
+  font-weight: 700;
+}
+
+a {
+  color: var(--fb-accent-light);
+  text-decoration: none;
+  transition: var(--fb-transition);
+}
+
+a:hover {
+  color: var(--fb-accent);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ---------- Utility Classes ---------- */
+.text-accent       { color: var(--fb-accent) !important; }
+.text-gold         { color: var(--fb-gold) !important; }
+.text-muted-fb     { color: var(--fb-muted) !important; }
+.bg-dark-2         { background-color: var(--fb-dark-2) !important; }
+.bg-dark-3         { background-color: var(--fb-dark-3) !important; }
+
+/* ---------- Buttons ---------- */
+.btn-fb-primary {
+  background-color: var(--fb-accent);
+  color: var(--fb-white);
+  border: none;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--fb-radius-sm);
+  font-family: var(--fb-font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--fb-transition);
+  box-shadow: var(--fb-shadow-btn);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-fb-primary:hover {
+  background-color: var(--fb-accent-dark);
+  color: var(--fb-white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(201,121,106,0.55);
+}
+
+.btn-fb-primary:active {
+  transform: translateY(0);
+}
+
+.btn-fb-outline {
+  background-color: transparent;
+  color: var(--fb-white);
+  border: 2px solid rgba(255,255,255,0.3);
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--fb-radius-sm);
+  font-family: var(--fb-font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--fb-transition);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-fb-outline:hover {
+  border-color: var(--fb-accent);
+  color: var(--fb-accent);
+  background-color: rgba(201,121,106,0.08);
+}
+
+.btn-fb-gold {
+  background-color: var(--fb-gold);
+  color: var(--fb-dark);
+  border: none;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--fb-radius-sm);
+  font-family: var(--fb-font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: var(--fb-transition);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-fb-gold:hover {
+  background-color: #c49440;
+  transform: translateY(-1px);
+}
+
+/* ---------- Section Spacing ---------- */
+.fb-section {
+  padding: 5rem 0;
+}
+
+.fb-section-alt {
+  padding: 5rem 0;
+  background-color: var(--fb-dark-2);
+}
+
+.fb-section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.fb-section-subtitle {
+  color: var(--fb-muted);
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+
+.fb-accent-line {
+  width: 56px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--fb-accent), var(--fb-gold));
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
+}
+
+/* ---------- Cards ---------- */
+.fb-card {
+  background-color: var(--fb-dark-3);
+  border: 1px solid var(--fb-border);
+  border-radius: var(--fb-radius-md);
+  padding: 1.75rem;
+  transition: var(--fb-transition);
+  height: 100%;
+}
+
+.fb-card:hover {
+  border-color: rgba(201,121,106,0.4);
+  transform: translateY(-3px);
+  box-shadow: var(--fb-shadow-card);
+}
+
+.fb-card-icon {
+  font-size: 2.2rem;
+  color: var(--fb-accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* ---------- Divider ---------- */
+.fb-divider {
+  border: none;
+  border-top: 1px solid var(--fb-border);
+  margin: 0;
+}
+
+/* ---------- Badge ---------- */
+.fb-badge {
+  display: inline-block;
+  background-color: rgba(201,121,106,0.15);
+  color: var(--fb-accent-light);
+  border: 1px solid rgba(201,121,106,0.3);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Star Rating ---------- */
+.fb-stars {
+  color: var(--fb-gold);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--fb-dark-2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--fb-dark-3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fb-accent-dark);
+}
+
+/* ---------- Router outlet padding (below fixed navbar) ---------- */
+.fb-page-wrapper {
+  padding-top: 72px;
+}
+
+/* ---------- Responsive helpers ---------- */
+@media (max-width: 768px) {
+  .fb-section,
+  .fb-section-alt {
+    padding: 3.5rem 0;
+  }
+}

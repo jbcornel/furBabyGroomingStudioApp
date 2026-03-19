@@ -1,0 +1,172 @@
+/* =============================================
+   Reviews Component
+   ============================================= */
+
+.fb-reviews-hero {
+  padding: 4rem 0 3rem;
+  background: linear-gradient(160deg, #16162a 0%, #12121f 60%);
+}
+
+.fb-reviews-hero__sub {
+  color: var(--fb-muted);
+  font-size: 1.05rem;
+  max-width: 500px;
+  line-height: 1.7;
+  margin: 0 0 2rem;
+}
+
+/* ---------- Rating Summary ---------- */
+.fb-reviews__summary {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background-color: var(--fb-dark-3);
+  border: 1px solid var(--fb-border);
+  border-radius: var(--fb-radius-md);
+  padding: 1.25rem 1.75rem;
+  display: inline-flex;
+}
+
+.fb-reviews__avg-score {
+  font-family: var(--fb-font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--fb-white);
+  line-height: 1;
+}
+
+.fb-reviews__avg-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.fb-stars {
+  font-size: 1.4rem;
+  color: var(--fb-gold);
+  letter-spacing: 0.05em;
+}
+
+.fb-reviews__avg-label {
+  color: var(--fb-muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ---------- Review Cards ---------- */
+.fb-review-card {
+  background-color: var(--fb-dark-3);
+  border: 1px solid var(--fb-border);
+  border-radius: var(--fb-radius-md);
+  padding: 1.5rem;
+  height: 100%;
+  transition: var(--fb-transition);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fb-review-card:hover {
+  border-color: rgba(201,121,106,0.4);
+  transform: translateY(-3px);
+  box-shadow: var(--fb-shadow-card);
+}
+
+.fb-review-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.fb-review-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--fb-accent), var(--fb-accent-dark));
+  color: var(--fb-white);
+  font-family: var(--fb-font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fb-review-card__name {
+  font-family: var(--fb-font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--fb-white);
+}
+
+.fb-review-card__pet {
+  font-size: 0.8rem;
+  color: var(--fb-muted);
+  margin-top: 0.1rem;
+}
+
+.fb-review-card__stars-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fb-review-card__stars-row .fb-stars {
+  font-size: 1rem;
+}
+
+.fb-review-card__date {
+  font-size: 0.8rem;
+  color: var(--fb-muted);
+}
+
+.fb-review-card__text {
+  color: rgba(255,255,255,0.78);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+/* ---------- Leave a Review CTA ---------- */
+.fb-reviews__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.fb-reviews__cta-sub {
+  color: var(--fb-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  max-width: 500px;
+  margin: 0;
+}
+
+.fb-reviews__cta-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .fb-reviews__cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fb-reviews__cta-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .fb-reviews__cta-actions .btn-fb-primary,
+  .fb-reviews__cta-actions .btn-fb-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://localhost:5033'
+  mailerUrl: 'http://localhost:3000'
 };

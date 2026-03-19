@@ -1,0 +1,323 @@
+/* =============================================
+   Home Component
+   ============================================= */
+
+/* ---------- Hero ---------- */
+.fb-hero {
+  padding: 5rem 0 4rem;
+  background: linear-gradient(160deg, #16162a 0%, #12121f 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+.fb-hero::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(201,121,106,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.fb-hero__headline {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.fb-hero__lead {
+  color: var(--fb-muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+
+.fb-hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.fb-hero__address {
+  color: var(--fb-muted);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+/* Hero card */
+.fb-hero__card {
+  background-color: var(--fb-dark-3);
+  border: 1px solid var(--fb-border);
+  border-radius: var(--fb-radius-lg);
+  padding: 1.75rem;
+}
+
+.fb-hero__card-header {
+  font-family: var(--fb-font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--fb-accent-light);
+  border-bottom: 1px solid var(--fb-border);
+  padding-bottom: 0.85rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fb-hero__service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.fb-hero__service-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+}
+
+/* ---------- Service Cards ---------- */
+.fb-service-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.fb-service-desc {
+  color: var(--fb-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- How It Works ---------- */
+.fb-step {
+  background-color: var(--fb-dark-3);
+  border: 1px solid var(--fb-border);
+  border-radius: var(--fb-radius-md);
+  padding: 2rem 1.75rem;
+  height: 100%;
+  transition: var(--fb-transition);
+}
+
+.fb-step:hover {
+  border-color: rgba(201,121,106,0.4);
+  transform: translateY(-3px);
+  box-shadow: var(--fb-shadow-card);
+}
+
+.fb-step__number {
+  font-family: var(--fb-font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(201,121,106,0.2);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.fb-step__icon {
+  font-size: 1.8rem;
+  color: var(--fb-accent);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.fb-step__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.fb-step__desc {
+  color: var(--fb-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- Location ---------- */
+.fb-location-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.fb-location-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.5;
+}
+
+.fb-location-list a {
+  color: var(--fb-accent-light);
+}
+
+.fb-map-wrap {
+  border-radius: var(--fb-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--fb-border);
+}
+
+/* ---------- FAQ ---------- */
+.fb-faq__item {
+  background-color: var(--fb-dark-3);
+  border: 1px solid var(--fb-border) !important;
+  border-radius: var(--fb-radius-md) !important;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.fb-faq__btn {
+  background-color: transparent !important;
+  color: var(--fb-white) !important;
+  font-family: var(--fb-font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 1.1rem 1.25rem;
+  box-shadow: none !important;
+}
+
+.fb-faq__btn::after {
+  filter: invert(1);
+}
+
+.fb-faq__btn:not(.collapsed) {
+  color: var(--fb-accent-light) !important;
+}
+
+.fb-faq__body {
+  background-color: transparent;
+  color: var(--fb-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding: 0 1.25rem 1.25rem;
+}
+
+/* ---------- Footer ---------- */
+.fb-footer {
+  background-color: var(--fb-dark-2);
+  padding: 4rem 0 2rem;
+}
+
+.fb-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.fb-footer__paw {
+  font-size: 1.6rem;
+}
+
+.fb-footer__brand-name {
+  font-family: var(--fb-font-heading);
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--fb-white);
+}
+
+.fb-footer__tagline {
+  color: var(--fb-muted);
+  font-size: 0.88rem;
+  margin-bottom: 1.25rem;
+}
+
+.fb-footer__contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.fb-footer__contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.88rem;
+  color: var(--fb-muted);
+}
+
+.fb-footer__contact-list a {
+  color: var(--fb-muted);
+}
+
+.fb-footer__contact-list a:hover {
+  color: var(--fb-accent-light);
+}
+
+.fb-footer__heading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--fb-white);
+  margin-bottom: 1rem;
+}
+
+.fb-footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fb-footer__links li,
+.fb-footer__links a {
+  font-size: 0.88rem;
+  color: var(--fb-muted);
+  transition: var(--fb-transition);
+}
+
+.fb-footer__links a:hover {
+  color: var(--fb-accent-light);
+}
+
+.fb-footer__copy {
+  color: var(--fb-muted);
+  font-size: 0.82rem;
+  text-align: center;
+  margin: 0;
+  padding-top: 0.5rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .fb-hero {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .fb-hero__ctas {
+    flex-direction: column;
+  }
+
+  .fb-hero__ctas .btn-fb-primary,
+  .fb-hero__ctas .btn-fb-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
